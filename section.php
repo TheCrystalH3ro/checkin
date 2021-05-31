@@ -38,7 +38,7 @@
             </div>
 
             <div class="check-footer">
-                    <span>Go <a href="http://localhost/job/checkin/checkin/"> back </a></span>
+                    <span>Go <a href="<?= $base_url ?>"> back </a></span>
             </div>
         </div>
 

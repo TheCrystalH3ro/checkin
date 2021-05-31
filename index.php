@@ -4,7 +4,7 @@ include 'partials/header.php' ?>
 
     <?php
         if(!$is_logged) {
-            header('Location: http://localhost/job/checkin/checkin/login.php');
+            header('Location: '. $base_url . 'login.php');
             die();
         }
     ?>
@@ -22,7 +22,7 @@ include 'partials/header.php' ?>
 
         <?php endif; ?>
 
-        <form method="get" action="http://localhost/job/checkin/checkin/section.php">
+        <form method="get" action="<?= $base_url ?>section.php">
 
             <select name="section" id="sections">
                 <?php foreach($sections as $section): ?>

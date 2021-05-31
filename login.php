@@ -2,7 +2,7 @@
 
     <?php
         if($is_logged) {
-            header('Location: http://localhost/job/checkin/checkin/');
+            header('Location: '. $base_url);
             die();
         }
     ?>
