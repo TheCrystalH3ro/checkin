@@ -8,14 +8,17 @@
     </head>
 
     <body>
+        
+        <div id="main">
 
-    <?php 
-        if($is_logged):
-    ?>
+        <?php 
+            if($is_logged):
+        ?>
 
         <header>
             <div class="htop-left">
-                <span> Welcome, <?= $user->getFullName() ?> </span>
+                <a href="<?= $base_url ?>"> HOME </a> </br>
+                <span> Welcome, <a href="<?= $base_url ?>/profile.php?user=<?= $user->GetName() ?>"><?= $user->GetName() ?> </a></span>
             </div>
             <div class="htop-right">
                 <div class="team_status">
@@ -27,5 +30,3 @@
             </div>
         </header>
     <?php endif; ?>
-        
-        <div id="main">
