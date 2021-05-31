@@ -24,18 +24,22 @@
                 <h3> <?= $section['name'] ?> </h3>
             </div>
 
-            <div class="check-body">
+            <form method="post" action="<?= $base_url ?>checkin.php">
 
-                <?php if($u_section == NULL || $u_section['entered'] == 0): ?>
-                    <button type="submit" name="checkin-<?= $section['id'] ?>"> Check-In </button>
-                <?php elseif($u_section['id'] == $section['id']): ?>
-                    <button type="submit" name="checkout-<?= $section['id'] ?>"> Check-Out </button>
-                <?php else: ?>
-                    <p>Momentálne sa už nachádzaš v <b><?= $u_section['name'] ?></b></p>
-                    <button disabled> Check-In </button>
-                <?php endif ?>
-            
-            </div>
+                <div class="check-body">
+
+                    <?php if($u_section == NULL || $u_section['entered'] == 0): ?>
+                        <button type="submit" name="checkin" value="<?= $section['id'] ?>"> Check-In </button>
+                    <?php elseif($u_section['id'] == $section['id']): ?>
+                        <button type="submit" name="checkout" value="<?= $section['id'] ?>"> Check-Out </button>
+                    <?php else: ?>
+                        <p>Momentálne sa už nachádzaš v <b><?= $u_section['name'] ?></b></p>
+                        <button disabled> Check-In </button>
+                    <?php endif ?>
+                
+                </div>
+
+            </form>
 
             <div class="check-footer">
                     <span>Go <a href="<?= $base_url ?>"> back </a></span>
