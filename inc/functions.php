@@ -211,3 +211,30 @@ function GetSections($database){
         return $time->format('%h:%i:%s');
 
     }
+
+    function GetSectionHistory($database, $id, $time){
+
+        if(filter_var($id, FILTER_VALIDATE_INT) === false){
+            return false;
+        }
+
+        $sections = $database->select("checkins", [
+            "[><]sections" => ["section_id" => "id"],
+            "[><]users" => ["user_id" => "id"]
+        ], [
+            "checkins.time",
+            "users.user_name",
+            "checkins.entered"
+        ], [
+            "sections.id" => $id,
+
+            "checkins.time[>]" => $time,
+
+            "ORDER" => [
+                "checkins.time" => "ASC"
+            ],
+        ]);
+
+        return $sections;
+
+    }
