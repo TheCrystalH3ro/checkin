@@ -1,7 +1,5 @@
 <?php
 
-use Checkin\User;
-
 include 'partials/header.php' ?>
 
     <?php
@@ -13,13 +11,30 @@ include 'partials/header.php' ?>
 
 
     <div class="container">
-        <select name="sections" id="sections">
-            <?php foreach($sections as $section): ?>
 
-                <option value="<?= $section['tag'] ?>"><?= $section['name'] ?></option>
+        <?php if($u_section == NULL || $u_section['entered'] == 0): ?>
 
-            <?php endforeach; ?>
-        </select>
+            <h3>Momentálne sa nenachádzaš v areáli</h3>
+
+        <?php else: ?>
+
+            <h3> Nachádzaš sa v: <?= $u_section['name'] ?></h3>
+
+        <?php endif; ?>
+
+        <form method="get" action="http://localhost/job/checkin/checkin/section.php">
+
+            <select name="section" id="sections">
+                <?php foreach($sections as $section): ?>
+
+                    <option value="<?= $section['tag'] ?>"><?= $section['name'] ?></option>
+
+                <?php endforeach; ?>
+            </select>
+
+            <button type="submit">Enter</button>
+
+        </form>
     </div>
 
 <?php include 'partials/footer.php' ?>

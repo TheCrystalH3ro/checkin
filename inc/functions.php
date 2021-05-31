@@ -31,15 +31,35 @@
 
     function GetUserSection($database, $uid){
 
-        $section = $database->select("teams", [
-            "[><]checkins" => ["id" => "team_id"],
-            "[><]users" => ["user_teams.user_id" => "id"]
+        $section = $database->select("sections", [
+            "[><]checkins" => ["id" => "section_id"],
+            "[><]users" => ["checkins.user_id" => "id"]
         ], [
-            "teams.id",
-            "teams.tag",
-            "teams.name"
+            "sections.id",
+            "sections.tag",
+            "sections.name",
+            "checkins.entered",
+            "checkins.time",
         ], [
-            "users.id" => $uid
+            "users.id" => $uid,
+            "ORDER" => [
+                "checkins.time" => "DESC"
+            ],
+            "LIMIT" => 1
+        ]);
+
+        return $section[0];
+
+    }
+
+    function GetSectionByTag($database, $tag){
+
+        $section = $database->select("sections", [
+            "id",
+            "tag",
+            "name"
+        ], [
+            "tag" => $tag
         ]);
 
         return $section[0];

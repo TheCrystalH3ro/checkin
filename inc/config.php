@@ -6,6 +6,8 @@ require 'inc/classes.php';
 use Checkin\User;
 use Medoo\Medoo;
 
+$base_url = 'http://localhost/job/checkin/checkin/';
+
 $db = [
     'host' => 'localhost',
     'port' => '3306',
@@ -67,3 +69,5 @@ $user_data = $database->select("users", [
 $user = new User($user_data['id'], $user_data['user_name'], $user_data['first_name'], $user_data['last_name']);
 
 $sections = GetSections($database);
+
+$u_section = GetUserSection($database, $user->GetId());
