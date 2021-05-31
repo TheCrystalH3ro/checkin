@@ -1,6 +1,7 @@
 <?php
 
 require 'vendor/autoload.php';
+require 'inc/classes.php';
 
 use Medoo\Medoo;
 
