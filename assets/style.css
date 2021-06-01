@@ -39,7 +39,7 @@ header div {
     display: flex;
 }
 
-.main-box, .checkin-box, .profile-box {
+.main-box, .checkin-box, .profile-box, .log-box {
     background-color: #D9D9D9;
     height: max-content;
     padding: 2em;
@@ -47,6 +47,10 @@ header div {
     margin: 0 auto;
     min-width: 300px;
     text-align: center;
+}
+
+.log-box p {
+    text-align: left;
 }
 
 .enter {

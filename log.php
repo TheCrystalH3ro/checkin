@@ -22,11 +22,16 @@
 
 <div class="container">
 
-    <?php foreach($log_data as $data): ?>
+    <div class="log-box">
 
-        <p> [<?= $data['time'] ?>]: <?= $data['user_name'] ?> <?= ($data['entered']) ? 'entered' : 'left' ?> <?= $log_section['name'] ?> </p>
 
-    <?php endforeach; ?>
+        <?php foreach($log_data as $data): ?>
+
+            <p> [<?= $data['time'] ?>]: <?= $data['user_name'] ?> <?= ($data['entered']) ? 'entered' : 'left' ?> <?= $log_section['name'] ?> </p>
+
+        <?php endforeach; ?>
+
+    </div>
     
 </div>
 
