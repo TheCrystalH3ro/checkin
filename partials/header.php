@@ -5,6 +5,7 @@
 <html>
 
     <head>
+        <link rel="stylesheet" href="assets/style.css">
     </head>
 
     <body>
@@ -17,14 +18,14 @@
 
         <header>
             <div class="htop-left">
-                <a href="<?= $base_url ?>"> HOME </a> </br>
-                <span> Welcome, <a href="<?= $base_url ?>/profile.php?user=<?= $user->GetName() ?>"><?= $user->GetName() ?> </a></span>
+                <div class="nav-item"><a href="<?= $base_url ?>"> HOME </a> </br> </div>
+                <div class="nav-item"><span> Welcome, <a href="<?= $base_url ?>profile.php?user=<?= $user->GetName() ?>"><?= $user->GetName() ?> </a></span> </div>
             </div>
             <div class="htop-right">
-                <div class="team_status">
+                <div class="team_status nav-item">
                     <span>Team: <?= GetUserTeam($database, $user->GetId())["name"] ?></span>
                 </div>
-                <button>
+                <button class="nav-item">
                     Logout
                 </button>
             </div>

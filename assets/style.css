@@ -1,0 +1,97 @@
+body {
+    background-color: #003F63;
+}
+
+#main {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    margin-top: 1em;
+}
+
+header div {
+    display: flex;
+    width: max-content;
+}
+
+.nav-item {
+    display: block;
+    padding: 0.5em;
+    background-color: #F2B138;
+    color: #D9D9D9;
+    width: max-content;
+}
+
+.nav-item a {
+    color: #D9D9D9;
+}
+
+.htop-right {
+    margin-left: auto;
+}
+
+.container {
+    min-height: 90vh;
+    display: flex;
+}
+
+.main-box, .checkin-box, .profile-box {
+    background-color: #D9D9D9;
+    height: max-content;
+    padding: 2em;
+    align-self: center;
+    margin: 0 auto;
+    min-width: 300px;
+    text-align: center;
+}
+
+.enter {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn {
+    background-color: #F2B138;
+    color: #D9D9D9;
+    padding: 0.8em 1.4em;
+    border: none;
+    transition: box-shadow 0.3s;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.btn:hover {
+    box-shadow: 0 0 0.4em #ac7613;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.btn[disabled] {
+    background-color: #A1A5A6;
+}
+
+.btn:hover[disabled] {
+    box-shadow: none;
+    cursor: default;
+}
+
+
+#sections {
+    width: 100%;
+    margin: 1em 0;
+    padding: 0.8em 1em;
+    background-color: #353D40;
+    color: #D9D9D9;
+}
+
+.check-footer {
+    margin-top: 20px;
+}
+
+.check-footer a {
+    color: #F2B138;
+}

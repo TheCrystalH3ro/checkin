@@ -12,29 +12,35 @@ include 'partials/header.php' ?>
 
     <div class="container">
 
-        <?php if($u_section == NULL || $u_section['entered'] == 0): ?>
+        <div class="main-box">
 
-            <h3>Momentálne sa nenachádzaš v areáli</h3>
+            <?php if($u_section == NULL || $u_section['entered'] == 0): ?>
 
-        <?php else: ?>
+                <h3>Momentálne sa nenachádzaš v areáli</h3>
 
-            <h3> Nachádzaš sa v: <?= $u_section['name'] ?></h3>
+            <?php else: ?>
 
-        <?php endif; ?>
+                <h3> Nachádzaš sa v: <?= $u_section['name'] ?></h3>
 
-        <form method="get" action="<?= $base_url ?>section.php">
+            <?php endif; ?>
 
-            <select name="section" id="sections">
-                <?php foreach($sections as $section): ?>
+            <form method="get" action="<?= $base_url ?>section.php">
 
-                    <option value="<?= $section['tag'] ?>"><?= $section['name'] ?></option>
+                <select name="section" id="sections">
+                    <?php foreach($sections as $section): ?>
 
-                <?php endforeach; ?>
-            </select>
+                        <option value="<?= $section['tag'] ?>"><?= $section['name'] ?></option>
 
-            <button type="submit">Enter</button>
+                    <?php endforeach; ?>
+                </select>
+                    
+                <div class="enter">
+                    <button class="btn" type="submit">ENTER</button>
+                </div>
 
-        </form>
+            </form>
+
+        </div>
     </div>
 
 <?php include 'partials/footer.php' ?>

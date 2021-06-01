@@ -7,13 +7,21 @@
         }
     ?>
 
-    <form action="/" method="post">
-        <label for="username">Username: 
-            <input type="text" id="username" name="username">
-        </label>
+    <div class="container">
 
-        <button type="submit">Login</button>
+        <form class="main-box" action="<?= $base_url ?>" method="post">
+            <label for="username">
+                <p> Username: </p>
+                
+               <p> <input type="text" id="username" name="username"> </p>
+            </label>
+            
+            <div>
+                <button class="btn" type="submit">Login</button>
+            </div>
 
-    </form>
+        </form>
+
+    </div>
 
 <?php include 'partials/footer.php' ?>
