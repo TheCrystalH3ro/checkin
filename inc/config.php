@@ -53,10 +53,19 @@ include 'inc/functions.php';
 
 //ENVIRONMENT
 
-$is_logged = 1;
+session_start();
 
-$user = GetUserById($database, 0);
+if(isset($_SESSION['user']) && $_SESSION['user'] != null) {
 
-$sections = GetSections($database);
+	$is_logged = 1;
 
-$u_section = GetUserSection($database, $user->GetId());
+	$user = GetUserById($database, $_SESSION['user']);
+
+	$sections = GetSections($database);
+
+	$u_section = GetUserSection($database, $user->GetId());
+
+} else {
+	$is_logged = 0;
+}
+

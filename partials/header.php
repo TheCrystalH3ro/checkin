@@ -25,9 +25,11 @@
                 <div class="team_status nav-item">
                     <span>Team: <?= GetUserTeam($database, $user->GetId())["name"] ?></span>
                 </div>
-                <button class="nav-item">
-                    Logout
-                </button>
+                <form method="post" action="<?= $base_url ?>logout.php">
+                    <button class="nav-item">
+                        Logout
+                    </button>
+                </form>
             </div>
         </header>
     <?php endif; ?>
