@@ -19,31 +19,39 @@
 
     <div class="container">
 
-        <div class="checkin-box">
-            <div class="heading">
-                <h3> <?= $section['name'] ?> </h3>
+        <div class="box-wrap">
+
+            <div class="btn-list">
+                <a href="<?= $base_url ?>list.php?section=<?= $section['tag'] ?>" class="btn-sm"> List </a>
+                <a href="<?= $base_url ?>log.php?section=<?= $section['tag'] ?>" class="btn-sm"> Log </a>
             </div>
-
-            <form method="post" action="<?= $base_url ?>checkin.php">
-
-                <div class="check-body">
-
-                    <?php if($u_section == NULL || $u_section['entered'] == 0): ?>
-                        <button class="btn" type="submit" name="checkin" value="<?= $section['id'] ?>"> Check-In </button>
-                    <?php elseif($u_section['id'] == $section['id']): ?>
-                        <button class="btn" type="submit" name="checkout" value="<?= $section['id'] ?>"> Check-Out </button>
-                    <?php else: ?>
-                        <p>Momentálne sa už nachádzaš v <b><?= $u_section['name'] ?></b></p>
-                        <button class="btn" disabled> Check-In </button>
-                    <?php endif ?>
-                
+            <div class="checkin-box">
+                <div class="heading">
+                    <h3> <?= $section['name'] ?> </h3>
                 </div>
-
-            </form>
-
-            <div class="check-footer">
-                    <span>Go <a href="<?= $base_url ?>"> back </a></span>
+    
+                <form method="post" action="<?= $base_url ?>checkin.php">
+    
+                    <div class="check-body">
+    
+                        <?php if($u_section == NULL || $u_section['entered'] == 0): ?>
+                            <button class="btn" type="submit" name="checkin" value="<?= $section['id'] ?>"> Check-In </button>
+                        <?php elseif($u_section['id'] == $section['id']): ?>
+                            <button class="btn" type="submit" name="checkout" value="<?= $section['id'] ?>"> Check-Out </button>
+                        <?php else: ?>
+                            <p>Momentálne sa už nachádzaš v <b><?= $u_section['name'] ?></b></p>
+                            <button class="btn" disabled> Check-In </button>
+                        <?php endif ?>
+                    
+                    </div>
+    
+                </form>
+    
+                <div class="check-footer">
+                        <span>Go <a href="<?= $base_url ?>"> back </a></span>
+                </div>
             </div>
+
         </div>
 
     </div>
